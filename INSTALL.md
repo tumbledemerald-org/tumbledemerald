@@ -1,6 +1,12 @@
 # Instructions
 
-These instructions explain how to set up the tools required to build **pokeemerald**, which assembles the source files into a ROM.
+These instructions explain how to set up the tools required to build **tumbledemerald**, which assembles the source files into a ROM.
+
+If you're just ready to compile a ROM, and you have a machine running a Debian/Ubuntu-based distro or Arch Linux (not Arch Linux 32 or Arch Linux ARM!), we have automated compilation scripts. Just install `bash` on your system and run the correct script for your system:
+
+For systems using `apt`: run `makerom`.
+For systems using `pacman`: run `makerom_pacman`
+For other systems: follow the manual install instructions below:
 
 These instructions come with notes which can be expanded by clicking the "<i>Note...</i>" text.
 In general, you should not need to open these unless if you get an error or if you need additional clarification.
@@ -27,10 +33,10 @@ All of the Windows instructions assume that the default drive is C:\\. If this d
 **A note of caution**: As Windows 7 is officially unsupported by Microsoft and Windows 8 has very little usage, some maintainers are unwilling to maintain the Windows 7/8 instructions. Thus, these instructions may break in the future with fixes taking longer than fixes to the Windows 10 instructions.
 
 ## Windows 10 (WSL1)
-WSL1 is the preferred terminal to build **pokeemerald**. The following instructions will explain how to install WSL1 (referred to interchangeably as WSL).
+WSL1 is the preferred terminal to build **tumbledemerald**. The following instructions will explain how to install WSL1 (referred to interchangeably as WSL).
 - If WSL (Debian or Ubuntu) is **not installed**, then go to [Installing WSL1](#Installing-WSL1).
 - Otherwise, if WSL is installed, but it **hasn't previously been set up for another decompilation project**, then go to [Setting up WSL1](#Setting-up-WSL1).
-- Otherwise, **open WSL** and go to [Choosing where to store pokeemerald (WSL1)](#Choosing-where-to-store-pokeemerald-WSL1).
+- Otherwise, **open WSL** and go to [Choosing where to store tumbledemerald (WSL1)](#Choosing-where-to-store-tumbledemerald-WSL1).
 
 ### Installing WSL1
 1. Open [Windows Powershell **as Administrator**](https://i.imgur.com/QKmVbP9.png), and run the following command (Right Click or Shift+Insert is paste in the Powershell).
@@ -77,9 +83,9 @@ Some tips before proceeding:
     sudo apt update && sudo apt upgrade
     ```
 
-> Note: If the repository you plan to build has an **[older revision of the INSTALL.md](https://github.com/pret/pokeemerald/blob/571c598/INSTALL.md)**, then follow the [legacy WSL1 instructions](docs/legacy_WSL1_INSTALL.md) from here.
+> Note: If the repository you plan to build has an **[older revision of the INSTALL.md](https://github.com/pret/pokeemerald/blob/571c598/INSTALL.md)**,which **tumbledemerald does ***not***, then follow the [legacy WSL1 instructions](docs/legacy_WSL1_INSTALL.md) from here.
 
-4. Certain packages are required to build pokeemerald. Install these packages by running the following command:
+4. Certain packages are required to build tumbledemerald. Install these packages by running the following command:
 
     ```bash
     sudo apt install build-essential binutils-arm-none-eabi git libpng-dev
@@ -90,10 +96,10 @@ Some tips before proceeding:
     >   If the above command does not work, try the above command but replacing `apt` with `apt-get`.
     </details>
 
-### Choosing where to store pokeemerald (WSL1)
-WSL has its own file system that's not natively accessible from Windows, but Windows files *are* accessible from WSL. So you're going to want to store pokeemerald within Windows.
+### Choosing where to store tumbledemerald (WSL1)
+WSL has its own file system that's not natively accessible from Windows, but Windows files *are* accessible from WSL. So you're going to want to store tumbledemerald within Windows.
 
-For example, say you want to store pokeemerald (and agbcc) in **C:\Users\\_\<user>_\Desktop\decomps**. First, ensure that the folder already exists. Then, enter this command to **change directory** to said folder, where *\<user>* is your **Windows** username:
+For example, say you want to store tumbledemerald (and agbcc) in **C:\Users\\_\<user>_\Desktop\decomps**. First, ensure that the folder already exists. Then, enter this command to **change directory** to said folder, where *\<user>* is your **Windows** username:
 
 ```bash
 cd /mnt/c/Users/<user>/Desktop/decomps
@@ -115,7 +121,7 @@ Otherwise, ask for help on Discord or IRC (see [README.md](README.md)), or conti
 
 - If devkitARM is **not installed**, then go to [Installing devkitARM](#installing-devkitarm).
 - If devkitARM is installed, but msys2 **hasn't previously been set up for another decompilation project**, then go to [Setting up msys2](#setting-up-msys2).
-- Otherwise, **open msys2** and go to [Choosing where to store pokeemerald (msys2)](#choosing-where-to-store-pokeemerald-msys2).
+- Otherwise, **open msys2** and go to [Choosing where to store tumbledemerald (msys2)](#choosing-where-to-store-tumbledemerald-msys2).
 
 ### Installing devkitARM
 1. Download the devkitPro installer [here](https://github.com/devkitPro/installer/releases).
@@ -127,7 +133,7 @@ Note that in msys2, Copy is Ctrl+Insert and Paste is Shift+Insert.
 
 1. Open msys2 at C:\devkitPro\msys2\msys2_shell.bat.
 
-2. Certain packages are required to build pokeemerald. Install these by running the following command:
+2. Certain packages are required to build tumbledemerald. Install these by running the following command:
 
     ```bash
     pacman -S make gcc zlib-devel git
@@ -171,10 +177,10 @@ Note that in msys2, Copy is Ctrl+Insert and Paste is Shift+Insert.
     cd
     ```
 
-### Choosing where to store pokeemerald (msys2)
-At this point, you can choose a folder to store pokeemerald into. If you're okay with storing pokeemerald in the user profile folder, then proceed to [Installation](#installation). Otherwise, you'll need to account for where pokeemerald is stored when changing directory to the pokeemerald folder.
+### Choosing where to store tumbledemerald (msys2)
+At this point, you can choose a folder to store tumbledemerald into. If you're okay with storing tumbledemerald in the user profile folder, then proceed to [Installation](#installation). Otherwise, you'll need to account for where tumbledemerald is stored when changing directory to the tumbledemerald folder.
 
-For example, if you want to store pokeemerald (and agbcc) in **C:\Users\\_\<user>_\Desktop\decomps** (where *\<user>* is your **Windows** username), enter this command:
+For example, if you want to store tumbledemerald (and agbcc) in **C:\Users\\_\<user>_\Desktop\decomps** (where *\<user>* is your **Windows** username), enter this command:
 
 ```bash
 cd Desktop/decomps
@@ -190,7 +196,7 @@ Otherwise, ask for help on Discord or IRC (see [README.md](README.md)), or conti
 2.
     - If Cygwin is **not installed**, or does not have all of the required packages installed, then go to [Installing Cygwin](#installing-cygwin).
     - If Cygwin is installed, but **is not configured to work with devkitARM**, then go to [Configuring devkitARM for Cygwin](#configuring-devkitarm-for-cygwin).
-    - Otherwise, **open Cygwin** and go to [Choosing where to store pokeemerald (Cygwin)](#choosing-where-to-store-pokeemerald-cygwin)
+    - Otherwise, **open Cygwin** and go to [Choosing where to store tumbledemerald (Cygwin)](#choosing-where-to-store-tumbledemerald-cygwin)
 
 ### Installing Cygwin
 1. Download [Cygwin](https://cygwin.com/install.html): setup-x86_64.exe for 64-bit Windows, setup-x86.exe for 32-bit.
@@ -233,15 +239,15 @@ Note that in Cygwin, Copy is Ctrl+Insert and Paste is Shift+Insert.
     >   Replace the drive letter c with the actual drive letter if it is not c.
     </details>
 
-### Choosing where to store pokeemerald (Cygwin)
+### Choosing where to store tumbledemerald (Cygwin)
 
-Cygwin has its own file system that's within Windows, at **C:\cygwin64\home\\_\<user>_**. If you don't want to store pokeemerald there, you'll need to account for where pokeemerald is stored when **changing directory** to the pokeemerald folder.
+Cygwin has its own file system that's within Windows, at **C:\cygwin64\home\\_\<user>_**. If you don't want to store tumbledemerald there, you'll need to account for where tumbledemerald is stored when **changing directory** to the tumbledemerald folder.
 
-For example, if you want to store pokeemerald (and agbcc) in **C:\Users\\_\<user>_\Desktop\decomps**, enter this command, where *\<user>* is your **Windows** username:
+For example, if you want to store tumbledemerald (and agbcc) in **C:\Users\\_\<user>_\Desktop\decomps**, enter this command, where *\<user>* is your **Windows** username:
 ```bash
 cd c:/Users/<user>/Desktop/decomps
 ```
-Note that the directory **must exist** in Windows. If you want to store pokeemerald in a dedicated folder that doesn't exist (e.g. the example provided above), then create the folder (e.g. using Windows Explorer) before executing the `cd` command.
+Note that the directory **must exist** in Windows. If you want to store tumbledemerald in a dedicated folder that doesn't exist (e.g. the example provided above), then create the folder (e.g. using Windows Explorer) before executing the `cd` command.
 
 <details>
     <summary><i>Notes...</i></summary>
@@ -261,7 +267,7 @@ If this works, then proceed to [Installation](#installation). Otherwise, ask for
 
 2.  - If libpng is **not installed**, then go to [Installing libpng (macOS)](#installing-libpng-macos).
     - If devkitARM is **not installed**, then go to [Installing devkitARM (macOS)](#installing-devkitarm-macos).
-    - Otherwise, **open the Terminal** and go to [Choosing where to store pokeemerald (macOS)](#choosing-where-to-store-pokeemerald-macos)
+    - Otherwise, **open the Terminal** and go to [Choosing where to store tumbledemerald (macOS)](#choosing-where-to-store-tumbledemerald-macos)
 
 ### Installing libpng (macOS)
 <details>
@@ -279,7 +285,7 @@ If this works, then proceed to [Installation](#installation). Otherwise, ask for
     ```
     libpng is now installed.
 
-    Continue to [Installing devkitARM (macOS)](#installing-devkitarm-macos) if **devkitARM is not installed**, otherwise, go to [Choosing where to store pokeemerald (macOS)](#choosing-where-to-store-pokeemerald-macos).
+    Continue to [Installing devkitARM (macOS)](#installing-devkitarm-macos) if **devkitARM is not installed**, otherwise, go to [Choosing where to store tumbledemerald (macOS)](#choosing-where-to-store-tumbledemerald-macos).
 
 ### Installing devkitARM (macOS)
 1. Download the `devkitpro-pacman-installer.pkg` package from [here](https://github.com/devkitPro/pacman/releases).
@@ -305,14 +311,14 @@ If this works, then proceed to [Installation](#installation). Otherwise, ask for
     echo "if [ -f ~/.bashrc ]; then . ~/.bashrc; fi" >> ~/.bash_profile
     ```
 
-### Choosing where to store pokeemerald (macOS)
-At this point, you can choose a folder to store pokeemerald into. If you're okay with storing pokeemerald in the user folder, then proceed to [Installation](#installation). Otherwise, you'll need to account for where pokeemerald is stored when changing directory to the pokeemerald folder.
+### Choosing where to store tumbledemerald (macOS)
+At this point, you can choose a folder to store tumbledemerald into. If you're okay with storing tumbledemerald in the user folder, then proceed to [Installation](#installation). Otherwise, you'll need to account for where tumbledemerald is stored when changing directory to the tumbledemerald folder.
 
-For example, if you want to store pokeemerald (and agbcc) in **~/Desktop/decomps**, enter this command to **change directory** to the desired folder:
+For example, if you want to store tumbledemerald (and agbcc) in **~/Desktop/decomps**, enter this command to **change directory** to the desired folder:
 ```bash
 cd Desktop/decomps
 ```
-Note that the directory **must exist** in the folder system. If you want to store pokeemerald in a dedicated folder that doesn't exist (e.g. the example provided above), then create the folder (e.g. using Finder) before executing the `cd` command.
+Note that the directory **must exist** in the folder system. If you want to store tumbledemerald in a dedicated folder that doesn't exist (e.g. the example provided above), then create the folder (e.g. using Finder) before executing the `cd` command.
 
 <details>
     <summary><i>Note..</i>.</summary>
@@ -330,11 +336,11 @@ Run the following command to install the necessary packages:
 ```bash
 sudo apt install build-essential binutils-arm-none-eabi git libpng-dev
 ```
-Then proceed to [Choosing where to store pokeemerald (Linux)](#choosing-where-to-store-pokeemerald-linux).
+Then proceed to [Choosing where to store tumbledemerald (Linux)](#choosing-where-to-store-tumbledemerald-linux).
 <details>
     <summary><i>Note for legacy repos...</i></summary>
 
->   If the repository you plan to build has an **[older revision of the INSTALL.md](https://github.com/pret/pokeemerald/blob/571c598/INSTALL.md)**,
+>   If the repository you plan to build has an **[older revision of the INSTALL.md](https://github.com/pret/tumbledemerald/blob/571c598/INSTALL.md)**, which **tumbledemerald** does ***not***, 
 >   then you will have to install devkitARM. Install all the above packages except binutils-arm-none-eabi, and follow the instructions to
 >   [install devkitARM on Debian/Ubuntu-based distributions](#installing-devkitarm-on-debianubuntu-based-distributions).
 </details>
@@ -353,14 +359,15 @@ _(Specific instructions for other distributions would be greatly appreciated!)_
 3. Once devkitPro pacman is configured, run the following commands:
 
     ```bash
+    sudo pacman -Syu
     sudo pacman -Sy
     sudo pacman -S gba-dev
     ```
 
     The last command will ask for the selection of packages to install. Just press Enter to install all of them, followed by entering Y to proceed with the installation.
 
-### Choosing where to store pokeemerald (Linux)
-At this point, you can choose a folder to store pokeemerald (and agbcc) into. If so, you'll have to account for the modified folder path when changing directory to the pokeemerald folder.
+### Choosing where to store tumbledemerald (Linux)
+At this point, you can choose a folder to store tumbledemerald (and agbcc) into. If so, you'll have to account for the modified folder path when changing directory to the tumbledemerald folder.
 
 If this works, then proceed to [Installation](#installation). Otherwise, ask for help on Discord or IRC (see [README.md](README.md)).
 
@@ -369,15 +376,15 @@ If this works, then proceed to [Installation](#installation). Otherwise, ask for
 <details>
     <summary><i>Note for Windows users...</i></summary>
 
->   Consider adding an exception for the `pokeemerald` and/or `decomps` folder in Windows Security using
+>   Consider adding an exception for the `tumbledemerald` and/or `decomps` folder in Windows Security using
 >   [these instructions](https://support.microsoft.com/help/4028485). This prevents Microsoft Defender from
 >   scanning them which might improve performance while building.
 </details>
 
-1. If pokeemerald is not already downloaded (some users may prefer to download pokeemerald via a git client like GitHub Desktop), run:
+1. If tumbledemerald is not already downloaded (some users may prefer to download tumbledemerald via a git client like GitHub Desktop), run:
 
     ```bash
-    git clone https://github.com/pret/pokeemerald
+    git clone https://github.com/Rebirth-Devs/tumbledemerald
     ```
 
     <details>
@@ -388,56 +395,56 @@ If this works, then proceed to [Installation](#installation). Otherwise, ask for
     >   cd
     >   sudo umount /mnt/c
     >   sudo mount -t drvfs C: /mnt/c -o metadata,noatime
-    >   cd <folder where pokeemerald is to be stored>
+    >   cd <folder where tumbledemerald is to be stored>
     >   ```
-    >   Where *\<folder where pokeemerald is to be stored>* is the path of the folder [where you chose to store pokeemerald](#Choosing-where-to-store-pokeemerald-WSL1). Then run the `git clone` command again.
+    >   Where *\<folder where tumbledemerald is to be stored>* is the path of the folder [where you chose to store tumbledemerald](#Choosing-where-to-store-tumbledemerald-WSL1). Then run the `git clone` command again.
     </details>
 
-2. Install agbcc into pokeemerald. The commands to run depend on certain conditions. **You should only follow one of the listed instructions**:
-- If agbcc has **not been built before** in the folder where you chose to store pokeemerald, run the following commands to build and install it into pokeemerald:
+2. Install agbcc into tumbledemerald. The commands to run depend on certain conditions. **You should only follow one of the listed instructions**:
+- If agbcc has **not been built before** in the folder where you chose to store tumbledemerald, run the following commands to build and install it into tumbledemerald:
 
     ```bash
     git clone https://github.com/pret/agbcc
     cd agbcc
     ./build.sh
-    ./install.sh ../pokeemerald
+    ./install.sh ../tumbledemerald
     ```
 
-- **Otherwise**, if agbcc has been built before (e.g. if the git clone above fails), but was **last built on a different terminal** than the one currently used (only relevant to Windows, e.g. switching from msys2 to WSL1), then run the following commands to build and install it into pokeemerald:
+- **Otherwise**, if agbcc has been built before (e.g. if the git clone above fails), but was **last built on a different terminal** than the one currently used (only relevant to Windows, e.g. switching from msys2 to WSL1), then run the following commands to build and install it into tumbledemerald:
 
     ```bash
     cd agbcc
     git clean -fX
     ./build.sh
-    ./install.sh ../pokeemerald
+    ./install.sh ../tumbledemerald
     ```
 
-- **Otherwise**, if agbcc has been built before on the same terminal, run the following commands to install agbcc into pokeemerald:
+- **Otherwise**, if agbcc has been built before on the same terminal, run the following commands to install agbcc into tumbledemerald:
 
     ```bash
     cd agbcc
-    ./install.sh ../pokeemerald
+    ./install.sh ../tumbledemerald
     ```
 
     <details>
         <summary><i>Note...</i></summary>
 
-        > If building agbcc or pokeemerald results in an error, try deleting the agbcc folder and re-installing agbcc as if it has not been built before.
+        > If building agbcc or tumbledemerald results in an error, try deleting the agbcc folder and re-installing agbcc as if it has not been built before.
     </details>
 
-3. Once agbcc is installed, change directory back to the base directory where pokeemerald and agbcc are stored:
+3. Once agbcc is installed, change directory back to the base directory where tumbledemerald and agbcc are stored:
 
     ```bash
     cd ..
     ```
 
-Now you're ready to [build **pokeemerald**](#build-pokeemerald)
-## Build pokeemerald
-If you aren't in the pokeemerald directory already, then **change directory** to the pokeemerald folder:
+Now you're ready to [build **tumbledemerald**](#build-tumbledemerald)
+## Build tumbledemerald
+If you aren't in the tumbledemerald directory already, then **change directory** to the tumbledemerald folder:
 ```bash
-cd pokeemerald
+cd tumbledemerald
 ```
-To build **pokeemerald.gba** for the first time and confirm it matches the official ROM image (Note: to speed up builds, see [Parallel builds](#parallel-builds)):
+To build **tumbledemerald.gba** for the first time and confirm it matches the official ROM image (Note: to speed up builds, see [Parallel builds](#parallel-builds)):
 ```bash
 make compare
 ```
@@ -447,7 +454,7 @@ If an OK is returned, then the installation went smoothly.
 > If you switched terminals since the last build (e.g. from msys2 to WSL1), you must run `make clean-tools` once before any subsequent `make` commands.
 </details>
 
-To build **pokeemerald.gba** with your changes:
+To build **tumbledemerald.gba** with your changes:
 ```bash
 make
 ```
@@ -472,7 +479,7 @@ Replace `<output of nproc>` with the number that the `nproc` command returned.
 
 ## Debug info
 
-To build **pokeemerald.elf** with enhanced debug info:
+To build **tumbledemerald.elf** with enhanced debug info:
 ```bash
 make DINFO=1
 ```

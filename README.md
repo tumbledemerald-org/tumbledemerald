@@ -1,10 +1,10 @@
-# Pokémon Emerald
+# tumbledemerald
 
-This is a decompilation of Pokémon Emerald.
+This is a decompilation of Pokémon Emerald, with many improvements and edits, similar to @Rangi42's [](https://github.com/Rangi42/polishedcrystal)
 
 It builds the following ROM:
 
-* [**pokeemerald.gba**](https://datomatic.no-intro.org/index.php?page=show_record&s=23&n=1961) `sha1: f3ae088181bf583e55daf962a92bb46f4f1d07b7`
+**tumbledemerald.gba** `sha1: varies`
 
 To set up the repository, see [INSTALL.md](INSTALL.md).
 
@@ -28,4 +28,4 @@ Other disassembly and/or decompilation projects:
 
 ## Contacts
 
-You can find us on [Discord](https://discord.gg/d5dubZ3) and [IRC](https://web.libera.chat/?#pret).
+You can slide into my [matrix] PM's: @fierymewtwo:matrix.org. I use Riot/Element, so you can send GIF's and such.
