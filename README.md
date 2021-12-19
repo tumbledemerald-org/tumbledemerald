@@ -8,6 +8,10 @@ It builds the following ROM:
 
 To set up the repository, see [INSTALL.md](INSTALL.md).
 
+Here is the current build status of the `master` branch.
+
+[![CI](https://github.com/Rebirth-Devs/tumbledemerald/actions/workflows/build.yml/badge.svg)](https://github.com/Rebirth-Devs/tumbledemerald/actions/workflows/build.yml)
+
 
 ## See also
 
