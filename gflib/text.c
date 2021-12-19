@@ -77,6 +77,7 @@ static const u8 sWindowVerticalScrollSpeeds[] = {
     [OPTIONS_TEXT_SPEED_SLOW] = 1,
     [OPTIONS_TEXT_SPEED_MID] = 2,
     [OPTIONS_TEXT_SPEED_FAST] = 4,
+    [OPTIONS_TEXT_SPEED_INSTANT] = 8,
 };
 
 static const struct GlyphWidthFunc sGlyphWidthFuncs[] =
@@ -324,22 +325,33 @@ void RunTextPrinters(void)
     {
         for (i = 0; i < NUM_TEXT_PRINTERS; ++i)
         {
-            if (sTextPrinters[i].active)
-            {
-                u16 temp = RenderFont(&sTextPrinters[i]);
-                switch (temp)
+            do {
+                bool8 isActive = gTextPrinters[i].active;
+                if (isActive)
                 {
-                case RENDER_PRINT:
-                    CopyWindowToVram(sTextPrinters[i].printerTemplate.windowId, COPYWIN_GFX);
-                case RENDER_UPDATE:
-                    if (sTextPrinters[i].callback != 0)
-                        sTextPrinters[i].callback(&sTextPrinters[i].printerTemplate, temp);
-                    break;
-                case RENDER_FINISH:
-                    sTextPrinters[i].active = FALSE;
+                                    u16 temp = RenderFont(&gTextPrinters[i]);
+                    switch (temp)
+                    {
+                    case 0:
+                        CopyWindowToVram(gTextPrinters[i].printerTemplate.windowId, 2);
+                        if (gTextPrinters[i].callback != 0)
+                            gTextPrinters[i].callback(&gTextPrinters[i].printerTemplate, temp);
+                        break;
+                    case 3:
+                        if (gTextPrinters[i].callback != 0)
+                            gTextPrinters[i].callback(&gTextPrinters[i].printerTemplate, temp);
+                        isActive = 0;
+                        break;
+                    case 1:
+                        gTextPrinters[i].active = 0;
+                        isActive = 0;
+                        break;
+                    }
+                }
+                if (!isActive) {
                     break;
                 }
-            }
+            } while (isInstant);
         }
     }
 }
