@@ -899,7 +899,7 @@ bool8 RS_IsRunningDisallowed(u8 tile)
 static bool8 IsRunningDisallowedByMetatile(u8 tile)
 {
     if (MetatileBehavior_IsRunningDisallowed(tile))
-        return TRUE;
+        return FALSE;
     if (MetatileBehavior_IsFortreeBridge(tile) && (PlayerGetZCoord() & 1) == 0)
         return TRUE;
     return FALSE;
