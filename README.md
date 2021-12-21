@@ -32,4 +32,4 @@ Other disassembly and/or decompilation projects:
 
 ## Contacts
 
-You can slide into my [matrix] PM's: @fierymewtwo:matrix.org. I use Riot/Element, so you can send GIF's and such.
+You can slide into my **[matrix]** PM's: @fierymewtwo:matrix.org. I use Riot/Element, so you can send GIF's and such.
