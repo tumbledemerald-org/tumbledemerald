@@ -8,7 +8,7 @@
 
 # Cool people who put up with me on IRC:
 
-- @sh4/@Daisyenryaku: you know why.
+- @sh4/@Daisyenryaku: you know why. (yes, I'm still using that "clicky clicky ```****``` frontend" ;)
 - @issotm: for running my awful sprite editing attempts through GIMP.
 - @cosarara: for showing me how to use `CTRL`+`Shift`+`F` in vscode.
 
