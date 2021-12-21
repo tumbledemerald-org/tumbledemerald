@@ -943,9 +943,9 @@ LittlerootTown_Text_ExplainRunningShoes:
 	.string "MOM: {PLAYER}, those shoes came with\n"
 	.string "instructions.\p"
 	.string "“Press the B Button while wearing these\n"
-	.string "RUNNING SHOES to run extra-fast!\n"
+	.string "RUNNING SHOES to run extra-fast!\p"
 	.string "You can also press L or R to run all the\n"
-	.string "time!$"
+	.string "time!”$"
 
 LittlerootTown_Text_ComeHomeIfAnythingHappens:
 	.string "… … … … … … … …\n"
