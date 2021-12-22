@@ -12,6 +12,9 @@ Here is the current build status of the `master` branch.
 
 [![CI](https://github.com/Rebirth-Devs/tumbledemerald/actions/workflows/build.yml/badge.svg)](https://github.com/Rebirth-Devs/tumbledemerald/actions/workflows/build.yml)
 
+Here is the latest upstream commit (in 7-character shortened form) applied to `tumbledemerald`:
+
+`Unknown`
 
 ## See also
 
