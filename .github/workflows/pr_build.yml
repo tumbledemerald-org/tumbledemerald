@@ -1,4 +1,4 @@
-name: CI
+name: Pull Request CI Script
 
 on:
   pull_request:
