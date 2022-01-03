@@ -1,6 +1,6 @@
 # tumbledemerald
 
-This is a decompilation of Pokémon Emerald, with many improvements and edits, similar to @Rangi42's [polishedcrystal](https://github.com/Rangi42/polishedcrystal)
+This is a decompilation of Pokémon Emerald, with many improvements and edits, similar to Rangi42's [polishedcrystal](https://github.com/Rangi42/polishedcrystal)
 
 It builds the following ROM:
 
