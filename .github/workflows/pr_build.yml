@@ -1,8 +1,6 @@
 name: CI
 
 on:
-  push:
-    branches: [ master ]
   pull_request:
 
 jobs:
@@ -41,29 +39,3 @@ jobs:
           MODERN: 1
           COMPARE: 0
         run: make -j${nproc} all
-
-      - name: Nightly build
-      run: git clone git://github.com/Rebirth-Devs/tumbledemerald
-      
-      run: |
-        mkdir files
-        mv ~/tumbledemerald/tumbledemerald_modern.gba ./files/tumbledemerald.gba
-        mv ~/tumbledemerald/tumbledemerald_modern.map ./files/tumbledemerald.map
-        mv ~/tumbledemerald/tumbledemerald_modern.elf ./files/tumbledemerald.elf
-
-      - name: Nuke the old nightly
-      id: delete_release
-      uses: jagger27/delete-release@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: actions-nightly
-
-      - name: Shove the tag over to master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        pushd tumbledemerald
-        git tag actions-nightly -f
-        git push --tags -f "https://Rangi42:$GITHUB_TOKEN@github.com/Rangi42/polishedcrystal.git"
-        popd  
