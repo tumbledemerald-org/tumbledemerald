@@ -3,7 +3,6 @@ name: CI
 on:
   push:
     branches: [ master ]
-  pull_request:
 
 jobs:
   build:
@@ -41,3 +40,120 @@ jobs:
           MODERN: 1
           COMPARE: 0
         run: make -j${nproc} all
+
+      - name: Nightly build
+      run: git clone git://github.com/Rebirth-Devs/tumbledemerald
+      
+      run: |
+        mkdir files
+        mv ~/tumbledemerald/tumbledemerald_modern.gba ./files/tumbledemerald.gba
+        mv ~/tumbledemerald/tumbledemerald_modern.map ./files/tumbledemerald.map
+        mv ~/tumbledemerald/tumbledemerald_modern.elf ./files/tumbledemerald.elf
+
+      - name: Nuke the old nightly
+      id: delete_release
+      uses: jagger27/delete-release@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: actions-nightly
+
+      - name: Shove the tag over to master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        pushd tumbledemerald
+        git tag actions-nightly -f
+        git push --tags -f "https://FieryMewtwo:$GITHUB_TOKEN@github.com/Rebirth-Devs/tumbledemerald.git"
+        popd  
+
+      - name: Create new release
+      id: create_release
+      uses: actions/create-release@v1.1.4
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: actions-nightly
+        release_name: Auto-generated build
+        body: |
+          This is the latest auto-generated nightly build for Tumbled. It was created at GitHub using a shared runner, but it has
+
+          the advantage of this method is that every time we (Rebirth-Devs) push changes, a new build will be generated. However, 
+
+          this means that the older release will be removed and lost forever. I (FieryMewtwo would preserve these, but I have to par-
+          
+          ticipate in *Real Life*™ and don't have time to do that.) Public nightlies are still supported, although they are all but obsolete
+
+          now. Anyway, you know the drill:
+
+
+
+          This release has the latest precompiled binaries for `tumbledemerald`, based on commit ${{ env.SHORT_SHA }}.
+
+          
+          ## How to play:
+
+          Windows, macOS, Linux, Android, hacked Nintendo Switch consoles running [`Atmosphère`](https://github.com/Atmosphere-NX/Atmosphere), jailbroken iPadOS devices, and jailbroken iOS devices:
+
+          
+          - Install [RetroArch](https://retroarch.com) and download the mGBA core.
+          
+          - Download the attached `.gba` file.
+          
+          - In RetroArch, select `Load Core` > `mGBA`, then select `Load Content` > browse to the `.gba` file you just downloaded.
+
+          
+          Chromebook:
+
+          
+          - Download the attached `.gba` file.
+        
+          - In the Browser or LaCrOS, open [webretro](https://binbashbanana.github.io/webretro).
+        
+          - Select `mgba (GBA)`.
+        
+          - Select the `.gba` file you just downloaded.
+        
+        
+          <details>
+        
+          <summary><i>Note for advanced users: <b>Crostini</b>...</i></summary>
+
+        
+        >   <b>Crostini</b> is an option and is the preferred option if you know how to use it. Follow the Linux instructions to install
+        
+        >   [RetroArch](https://retroarch.com) under Crostini
+        
+        </details>
+        draft: false
+        prerelease: true
+      - name: Upload ROM
+      id: upload
+      uses: actions/upload-release-asset@v1.0.1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./tumbledemerald/files/tumbledemerald.gba
+        asset_name: tumbledemerald-${{ env.SHORT_SHA }}.gbc
+        asset_content_type: application/octet-stream
+    - name: Upload .map file (for nerds only)
+      id: upload-map
+      uses: actions/upload-release-asset@v1.0.1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./tumbledemerald/files/tumbledemerald.map
+        asset_name: tumbledemerald-${{ env.SHORT_SHA }}.map
+        asset_content_type: application/octet-stream
+    - name: Upload ELF binary (for nerds only)
+      id: upload-elf
+      uses: actions/upload-release-asset@v1.0.1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./tumbledemerald/files/tumbledemerald.elf
+        asset_name: tumbledemerald-${{ env.SHORT_SHA }}.elf
+        asset_content_type: application/octet-stream
