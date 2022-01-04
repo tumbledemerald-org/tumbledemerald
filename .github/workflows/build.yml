@@ -1,4 +1,4 @@
-name: Push CI Script
+name: CI
 
 on:
   push:
@@ -64,7 +64,7 @@ jobs:
       run: |
         pushd tumbledemerald
         git tag actions-nightly -f
-        git push --tags -f "https://Rangi42:$GITHUB_TOKEN@github.com/Rangi42/polishedcrystal.git"
+        git push --tags -f "https://FieryMewtwo:$GITHUB_TOKEN@github.com/Rebirth-Devs/tumbledemerald.git"
         popd  
 
       - name: Create new release
