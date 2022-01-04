@@ -4,13 +4,17 @@ This is a decompilation of Pokémon Emerald, with many improvements and edits, s
 
 It builds the following ROM:
 
-**tumbledemerald.gba** `sha1: varies`
+**tumbledemerald.gba**
 
-To set up the repository, see [INSTALL.md](INSTALL.md).
+To set up the repository, see [INSTALL.md](INSTALL.md), or run either `makerom` (for apt) or `makerom_pacman` (for pacman) to compile automatically.
 
 Here is the current build status of the `master` branch.
 
 [![CI](https://github.com/Rebirth-Devs/tumbledemerald/actions/workflows/build.yml/badge.svg)](https://github.com/Rebirth-Devs/tumbledemerald/actions/workflows/build.yml)
+
+Here is the current build status for the [`tumble(db)log`](https://rebirth-devs.github.io/tumbledemerald/)
+
+[![pages-build-deployment](https://github.com/Rebirth-Devs/tumbledemerald/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/Rebirth-Devs/tumbledemerald/actions/workflows/pages/pages-build-deployment)
 
 Here is the latest upstream commit (in 7-character shortened form) applied to `tumbledemerald`:
 
@@ -31,8 +35,10 @@ Other disassembly and/or decompilation projects:
 * [**Pokémon Pinball: Ruby & Sapphire**](https://github.com/pret/pokepinballrs)
 * [**Pokémon FireRed and LeafGreen**](https://github.com/pret/pokefirered)
 * [**Pokémon Mystery Dungeon: Red Rescue Team**](https://github.com/pret/pmd-red)
+* [**Pokémon Diamond and Pearl**](https://github.com/pret/pokediamond)
+* [**Pokémon HeartGold and SoulSilver**](https://github.com/pret/pokeheartgold)
 
 
 ## Contacts
 
-You can slide into my **[matrix]** PM's: @fierymewtwo:matrix.org. I use Riot/Element, so you can send GIF's and such.
+You can slide into my **[matrix]** PM's: @fierymewtwo:matrix.org. However, there is an official Rebirth "room" [here](https://matrix.to/#/#rebirthteam:matrix.org)
