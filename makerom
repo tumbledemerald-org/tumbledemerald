@@ -21,3 +21,4 @@ cd agbcc
 # This command finally compiles our .gba, .map, and .elf files, after changing directory back to our game code.
 cd ../tumbledemerald
 make
+echo "Compiled. If make was successful, you should now have your files. USE AN ACCURATE EMULATOR!"
