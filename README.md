@@ -1,4 +1,4 @@
-# tumbledemerald
+# tumbledemerald [![CI](https://github.com/Rebirth-Devs/tumbledemerald/actions/workflows/build.yml/badge.svg)](https://github.com/Rebirth-Devs/tumbledemerald/actions/workflows/build.yml) [![pages-build-deployment](https://github.com/Rebirth-Devs/tumbledemerald/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/Rebirth-Devs/tumbledemerald/actions/workflows/pages/pages-build-deployment) [![chat on matrix!](https://img.shields.io/badge/matrix-%23rebirth--team%3Amatrix.org-brightgreen.svg)](https://matrix.to/#/#rebirthteam:matrix.org)
 
 This is a decompilation of Pokémon Emerald, with many improvements and edits, similar to Rangi42's [polishedcrystal](https://github.com/Rangi42/polishedcrystal)
 
@@ -8,13 +8,6 @@ It builds the following ROM:
 
 To set up the repository, see [INSTALL.md](INSTALL.md), or run either `makerom` (for apt) or `makerom_pacman` (for pacman) to compile automatically.
 
-Here is the current build status of the `master` branch.
-
-[![CI](https://github.com/Rebirth-Devs/tumbledemerald/actions/workflows/build.yml/badge.svg)](https://github.com/Rebirth-Devs/tumbledemerald/actions/workflows/build.yml)
-
-Here is the current build status for the [`tumble(db)log`](https://rebirth-devs.github.io/tumbledemerald/)
-
-[![pages-build-deployment](https://github.com/Rebirth-Devs/tumbledemerald/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/Rebirth-Devs/tumbledemerald/actions/workflows/pages/pages-build-deployment)
 
 Here is the latest upstream commit (in 7-character shortened form) applied to `tumbledemerald`:
 
@@ -41,4 +34,4 @@ Other disassembly and/or decompilation projects:
 
 ## Contacts
 
-You can slide into my **[matrix]** PM's: @fierymewtwo:matrix.org. However, there is an official Rebirth "room" [here](https://matrix.to/#/#rebirthteam:matrix.org)
+You can slide into my **[matrix]** PM's: @fierymewtwo:matrix.org. However, there is an official Rebirth "room" (see the **[matrix]** badge above)
