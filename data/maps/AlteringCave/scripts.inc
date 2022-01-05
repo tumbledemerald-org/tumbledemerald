@@ -23,3 +23,4 @@ AlteringCave_EventScript_MysteryMan::
 	msgbox AlteringCave_MysteryMan_Text_NowGo, MSGBOX_AUTOCLOSE
 	warp MAP_FARAWAY_ISLAND_ENTRANCE, 0, 0, 0
 	end    	
+	
