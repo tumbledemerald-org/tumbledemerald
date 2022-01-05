@@ -1,4 +1,6 @@
-# Cool people I ~~stole~~ *borrowed* code from:
+# Cool people:
+
+# creepyguy: Compiled 1.0.0, since I couldn't. He's awesome, go check him out on [Scratch](https://scratch.mit.edu/users/creepyguy256/)
 
 - @ghoulslash: A lot of the features here are directly from [ghoulslash/pokeemerald](https://github.com/ghoulslash/pokeemerald.git) and its many amazing feature branches.
 - Tutorial authors: Some features were adapted from code in the [tutorials](https://github.com/pret/pokeemerald/wiki/Tutorials/) in [pret](https://github.com/pret/)'s wiki.
