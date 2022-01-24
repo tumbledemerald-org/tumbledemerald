@@ -6,7 +6,7 @@
 #define TILE_FLAG_SURFABLE 2
 
 #define TILE_ATTRIBUTES(unused, surfable, wildEncounter) (((wildEncounter) ? 1 : 0) | ((surfable) ? 2 : 0) | ((unused) ? 4 : 0))
-
+[MB_SIGNPOST] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
 // wonder what the third flag is supposed to do
 static const u8 sTileBitAttributes[] =
 {
@@ -1522,4 +1522,9 @@ bool8 MetatileBehavior_IsTrainerHillTimer(u8 metatileBehavior)
         return TRUE;
     else
         return FALSE;
+}
+
+bool8 MetatileBehavior_IsSignpost(u8 mb)
+{
+    return (mb == MB_SIGNPOST);
 }
