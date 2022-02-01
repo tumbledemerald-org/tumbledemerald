@@ -2,16 +2,24 @@
 
 This is a decompilation of Pokémon Emerald, with many improvements and edits, similar to Rangi42's [polishedcrystal](https://github.com/Rangi42/polishedcrystal)
 
-It builds the following ROM:
+It builds the following ROMs:
 
-**tumbledemerald.gba**
+* **tumbledemerald.gba**
+* **tumbledemerald.gba** (debugging codebase)
 
-To set up the repository, see [INSTALL.md](INSTALL.md), or run either `makerom` (for apt) or `makerom_pacman` (for pacman) to compile automatically.
+To set up the repository, see [INSTALL.md](INSTALL.md), or run the appropriate script from the table below to compile automatically:
+
+|                                                                                     | You want a ROM for **debugging purposes** | You just want to **play** Tumbled |
+|-------------------------------------------------------------------------------------|-------------------------------------------|-----------------------------------|
+| If you use **Debian** or a derivative (**Ubuntu**, **Linux Mint**, **Linux Lite**   | Run `makerom`                             | Run `makerom_debug`               |
+| If you use an **Arch-based distro** (**Arch Linux**, **Manjaro**, **Garuda Linux**) | Run `makerom_pacman`                      | Run `makerom_pacman_debug`        |
 
 
-Here is the latest upstream commit (in 7-character shortened form) applied to `tumbledemerald`:
+Here is the last time `pret` / `master` was merged into `tumbledemerald` (`DD/MM/YYYY`):
 
-`Unknown`
+`20/12/2021`
+
+
 
 ## See also
 
