@@ -16,22 +16,27 @@
 
 void Debug_ShowMainMenu(void);
 static void Debug_DestroyMainMenu(u8);
+static void DebugAction_FarawayIsland(u8);
 static void DebugAction_Cancel(u8);
 static void DebugTask_HandleMainMenuInput(u8);
 
 enum {
+    DEBUG_MENU_ITEM_FARAWAY_ISLAND
     DEBUG_MENU_ITEM_CANCEL,
 };
 
+static const u8 gDebugText_FarawayIsland[] = _("T.FarawayIs");
 static const u8 gDebugText_Cancel[] = _("Cancel");
 
 static const struct ListMenuItem sDebugMenuItems[] =
 {
-    [DEBUG_MENU_ITEM_CANCEL] = {gDebugText_Cancel, DEBUG_MENU_ITEM_CANCEL}
+    [DEBUG_MENU_ITEM_FARAWAY_ISLAND] = {gDebugText_FarawayIsland, DEBUG_MENU_ITEM_FARAWAY_ISLAND},
+    [DEBUG_MENU_ITEM_CANCEL] = {gDebugText_Cancel, DEBUG_MENU_ITEM_CANCEL},
 };
 
 static void (*const sDebugMenuActions[])(u8) =
 {
+    [DEBUG_MENU_ITEM_NEW_ENTRY] = DebugAction_FarawayIsland,
     [DEBUG_MENU_ITEM_CANCEL] = DebugAction_Cancel
 };
 
@@ -123,6 +128,13 @@ static void DebugTask_HandleMainMenuInput(u8 taskId)
 static void DebugAction_Cancel(u8 taskId)
 {
     Debug_DestroyMainMenu(taskId);
+}
+
+static void DebugAction_FarawayIsland(u8 taskId)
+{
+    fadescreen FADE_TO_BLACK
+	setflag FLAG_REMOVE_WARP_FADE
+    warp MAP_FARAWAY_ISLAND_EXTERIOR, 0, 0, 0
 }
 
 #endif
