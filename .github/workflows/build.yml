@@ -43,8 +43,14 @@ jobs:
           ./install.sh ../
         working-directory: agbcc
 
-      - name: Modern
+      - name: Run "make modern"
         env:
           MODERN: 1
           COMPARE: 0
-        run: make -j${nproc} all
+        run: make -j${nproc}
+
+      - name: Debug testing (make DDEBUGGING=1)
+        env:
+          MODERN: 1
+          COMPARE: 0
+        run: make -j${nproc} DDEBUGGING=1
