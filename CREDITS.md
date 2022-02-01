@@ -22,3 +22,11 @@
 # Other awesome people:
 
 Anyone and everyone I possibly forgot!
+
+Debug menu peeps:
+TheXaman
+Ketsuban
+Pyredrid
+AsparagusEduardo
+Ghoulslash
+exposneed
