@@ -2,7 +2,7 @@
 
 These instructions explain how to set up the tools required to build **tumbledemerald**, which assembles the source files into a ROM.
 
-If you're just ready to compile a ROM, and you have a machine running a Debian/Ubuntu-based distro or Arch Linux (not Arch Linux 32 or Arch Linux ARM!), we have automated compilation scripts. Just install `bash` on your system and run the correct script for your system:
+If you're just ready to compile a ROM, and you have a machine running a Debian/Ubuntu-based distro or Arch Linux (not Arch Linux 32 or Arch Linux ARM!), we have automated compilation scripts. Just run the correct script for your system:
 
 For systems using `apt`: run `makerom`.
 For systems using `pacman`: run `makerom_pacman`
@@ -332,19 +332,35 @@ If this works, then proceed to [Installation](#installation). Otherwise, ask for
 Open Terminal and enter the following commands, depending on which distro you're using.
 
 ### Debian/Ubuntu-based distributions
-Run the following command to install the necessary packages:
+Run the following commands to install the necessary packages:
 ```bash
+sudo apt update && sudo apt upgrade -y    
 sudo apt install build-essential binutils-arm-none-eabi git libpng-dev
 ```
 Then proceed to [Choosing where to store tumbledemerald (Linux)](#choosing-where-to-store-tumbledemerald-linux).
 <details>
     <summary><i>Note for legacy repos...</i></summary>
 
->   If the repository you plan to build has an **[older revision of the INSTALL.md](https://github.com/pret/tumbledemerald/blob/571c598/INSTALL.md)**, which **tumbledemerald** does ***not***, 
+>   If the repository you plan to build has an **[older revision of the INSTALL.md](https://github.com/pret/pokeemerald/blob/571c598/INSTALL.md)**, which **tumbledemerald** does ***not***, 
 >   then you will have to install devkitARM. Install all the above packages except binutils-arm-none-eabi, and follow the instructions to
 >   [install devkitARM on Debian/Ubuntu-based distributions](#installing-devkitarm-on-debianubuntu-based-distributions).
 </details>
+    
+### Arch Linux based systems (Arch, Manjaro, Garuda, etc.)   
+Run the following commands to install the necessary packages:
+```fish
+sudo pacman -Syu    
+sudo pacman -S gcc g++ make arm-none-eabi-binutils git libpng
+```
+Then proceed to [Choosing where to store tumbledemerald (Linux)](#choosing-where-to-store-tumbledemerald-linux).
+<details>
+    <summary><i>Note for legacy repos...</i></summary>
 
+>   If the repository you plan to build has an **[older revision of the INSTALL.md](https://github.com/pret/pokeemerald/blob/571c598/INSTALL.md)**, which **tumbledemerald** does ***not***, 
+>   then you will have to install devkitARM. Install all the above packages except binutils-arm-none-eabi, and follow the instructions to
+>   [install devkitARM on Debian/Ubuntu-based distributions](#installing-devkitarm-on-debianubuntu-based-distributions).
+</details>
+    
 ### Other distributions
 _(Specific instructions for other distributions would be greatly appreciated!)_
 
@@ -354,8 +370,9 @@ _(Specific instructions for other distributions would be greatly appreciated!)_
     - `make`
     - `git`
     - `libpng-dev`
+    - `arm-none-eabi binutils`
 
-2. Follow the instructions [here](https://devkitpro.org/wiki/devkitPro_pacman) to install devkitPro pacman. As a reminder, the goal is to configure an existing pacman installation to recognize devkitPro's repositories.
+2. Follow the instructions [here](https://devkitpro.org/wiki/devkitPro_pacman) to install devkitPro pacman. (unless you decided to use arm binutils) As a reminder, the goal is to configure an existing pacman installation to recognize devkitPro's repositories.
 3. Once devkitPro pacman is configured, run the following commands:
 
     ```bash
