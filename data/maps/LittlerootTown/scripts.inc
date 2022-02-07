@@ -960,7 +960,7 @@ LittlerootTown_Text_ComeHomeIfAnythingHappens:
 LittlerootTown_Text_CanUsePCToStoreItems:
 	.string "Did you know? Now you can download the\n"
 	.string "source code for most of the POKéMON\p"
-	.string "games and edit it to make something\p"
+	.string "games and edit it to make something\n"
 	.string "brand-new? The power of science is\p"
 	.string "staggering!$"
 
