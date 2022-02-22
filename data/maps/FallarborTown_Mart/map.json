@@ -12,7 +12,7 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
@@ -85,21 +85,17 @@
       "x": 3,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_FALLARBOR_TOWN_POKEMON_CENTER_1F",
-      "dest_warp_id": 3
+      "dest_map": "MAP_FALLARBOR_TOWN",
+      "dest_warp_id": 0
     },
     {
       "x": 4,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_FALLARBOR_TOWN_POKEMON_CENTER_1F",
-      "dest_warp_id": 4
+      "dest_map": "MAP_FALLARBOR_TOWN",
+      "dest_warp_id": 0
     }
   ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "coord_events": [],
+  "bg_events": []
 }

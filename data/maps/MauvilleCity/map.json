@@ -202,6 +202,13 @@
       "dest_warp_id": 0
     },
     {
+      "x": 23,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_MART",
+      "dest_warp_id": 0
+    },
+    {
       "x": 32,
       "y": 14,
       "elevation": 0,
@@ -223,9 +230,7 @@
       "dest_warp_id": 0
     }
   ],
-  "coord_events": [
-
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "sign",
@@ -242,6 +247,22 @@
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "MauvilleCity_EventScript_GymSign"
+    },
+    {
+      "type": "sign",
+      "x": 24,
+      "y": 14,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Common_EventScript_ShowPokemartSign"
+    },
+    {
+      "type": "sign",
+      "x": 25,
+      "y": 14,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Common_EventScript_ShowPokemartSign"
     },
     {
       "type": "sign",

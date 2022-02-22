@@ -7,7 +7,6 @@
 - @pret: Without the amazing work done by the members of @pret to decompile and disassemble this game, this hack would not be possible.
 - @AsparagusEduardo: Same as @ghoulslash, I pulled from their feature branches!
 - @dunsparce9: I rewrote and expanded a lot of the code from their `pokeemerald-tweaks` project.
-- @huderlem for porymap and poryscript
 
 
 # Cool people who put up with me on IRC:
