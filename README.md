@@ -9,9 +9,9 @@ It builds the following ROM:
 To set up the repository, see [INSTALL.md](INSTALL.md), or run either `makerom` (for apt) or `makerom_pacman` (for pacman) to compile automatically.
 
 
-Here is the latest upstream commit (in 7-character shortened form) applied to `tumbledemerald`:
+Here is the last time Tumbled was updated to `pret:master`
 
-`Unknown`
+**20 December 2021**
 
 ## See also
 
