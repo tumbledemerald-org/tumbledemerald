@@ -35,3 +35,8 @@ Other disassembly and/or decompilation projects:
 ## Contacts
 
 You can slide into my **[matrix]** PM's: @fierymewtwo:matrix.org. However, there is an official Rebirth "room" (see the **[matrix]** badge above)
+
+
+# Notice: moved some stuff
+Buildscripts and some utilities have been moved to a new repo:
+[new stuffishness repo](https://github.com/tumbledemerald-org/te-utils)
