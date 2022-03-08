@@ -417,37 +417,15 @@ If this works, then proceed to [Installation](#installation). Otherwise, ask for
     >   Where *\<folder where tumbledemerald is to be stored>* is the path of the folder [where you chose to store tumbledemerald](#Choosing-where-to-store-tumbledemerald-WSL1). Then run the `git clone` command again.
     </details>
 
-2. Install agbcc into tumbledemerald. The commands to run depend on certain conditions. **You should only follow one of the listed instructions**:
-- If agbcc has **not been built before** in the folder where you chose to store tumbledemerald, run the following commands to build and install it into tumbledemerald:
-
+2. Since agbcc is a submodule, here:
+        
+        In the game repo:
     ```bash
-    git clone https://github.com/pret/agbcc
     cd agbcc
     ./build.sh
-    ./install.sh ../tumbledemerald
+    ./install.sh ../
     ```
 
-- **Otherwise**, if agbcc has been built before (e.g. if the git clone above fails), but was **last built on a different terminal** than the one currently used (only relevant to Windows, e.g. switching from msys2 to WSL1), then run the following commands to build and install it into tumbledemerald:
-
-    ```bash
-    cd agbcc
-    git clean -fX
-    ./build.sh
-    ./install.sh ../tumbledemerald
-    ```
-
-- **Otherwise**, if agbcc has been built before on the same terminal, run the following commands to install agbcc into tumbledemerald:
-
-    ```bash
-    cd agbcc
-    ./install.sh ../tumbledemerald
-    ```
-
-    <details>
-        <summary><i>Note...</i></summary>
-
-        > If building agbcc or tumbledemerald results in an error, try deleting the agbcc folder and re-installing agbcc as if it has not been built before.
-    </details>
 
 3. Once agbcc is installed, change directory back to the base directory where tumbledemerald and agbcc are stored:
 
