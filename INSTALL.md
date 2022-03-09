@@ -2,11 +2,18 @@
 
 These instructions explain how to set up the tools required to build **tumbledemerald**, which assembles the source files into a ROM.
 
-If you're just ready to compile a ROM, and you have a machine running a Debian/Ubuntu-based distro or Arch Linux (not Arch Linux 32 or Arch Linux ARM!), we have automated compilation scripts. Just run the correct script for your system:
+If you're just ready to compile a ROM, and you have a machine running a Debian/Ubuntu-based distro or Arch Linux:
 
-For systems using `apt`: run `makerom`.
-For systems using `pacman`: run `makerom_pacman`
-For other systems: follow the manual install instructions below:
+```fish
+git clone https://github.com/tumbledemerald-org/te-utils.git
+cd te-utils
+cd scripts
+cd linux
+cd game
+sh pacman # if you use Debian or Ubuntu, enter "sh apt" here instead.
+```
+
+For other systems, follow the manual install instructions below:
 
 These instructions come with notes which can be expanded by clicking the "<i>Note...</i>" text.
 In general, you should not need to open these unless if you get an error or if you need additional clarification.
