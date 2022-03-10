@@ -1,4 +1,4 @@
-# tumbledemerald [![CI](https://github.com/Rebirth-Devs/tumbledemerald/actions/workflows/build.yml/badge.svg)](https://github.com/Rebirth-Devs/tumbledemerald/actions/workflows/build.yml) [![pages-build-deployment](https://github.com/Rebirth-Devs/tumbledemerald/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/Rebirth-Devs/tumbledemerald/actions/workflows/pages/pages-build-deployment) [![Chat on Matrix](https://matrix.to/img/matrix-badge.svg)](https://matrix.to/#/#rebirthteam:matrix.org)
+# tumbledemerald [![CI](https://github.com/Rebirth-Devs/tumbledemerald/actions/workflows/build.yml/badge.svg)](https://github.com/Rebirth-Devs/tumbledemerald/actions/workflows/build.yml) [![Chat on Matrix](https://matrix.to/img/matrix-badge.svg)](https://matrix.to/#/#rebirthteam:matrix.org)
 
 This is a decompilation of Pokémon Emerald, with many improvements and edits, similar to Rangi42's [polishedcrystal](https://github.com/Rangi42/polishedcrystal)
 
@@ -40,3 +40,5 @@ You can slide into my **[matrix]** PM's: @fierymewtwo:matrix.org. However, there
 # Notice: moved some stuff
 Buildscripts and some utilities have been moved to a new repo:
 [new stuffishness repo](https://github.com/tumbledemerald-org/te-utils)
+
+website just got moved [here](https://github.com/tumbledemerald-org/te-site)
