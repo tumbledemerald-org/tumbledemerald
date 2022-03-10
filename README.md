@@ -6,7 +6,7 @@ It builds the following ROM:
 
 **tumbledemerald.gba**
 
-To set up the repository, see [INSTALL.md](INSTALL.md), or run either `makerom` (for apt) or `makerom_pacman` (for pacman) to compile automatically.
+To set up the repository, see [INSTALL.md](INSTALL.md), or run one of the buildscripts in [this](https://github.com/tumbledemerald-org/te-utils.git) repo to build automatically (only on Linux at the moment)
 
 
 Here is the last time Tumbled was updated to `pret:master`
