@@ -1,3 +1,8 @@
+# This repository is unmaintained! All future development will take place [here](https://gitlab.com/tbld/game)
+
+
+
+
 # tumbledemerald [![CI](https://github.com/Rebirth-Devs/tumbledemerald/actions/workflows/build.yml/badge.svg)](https://github.com/Rebirth-Devs/tumbledemerald/actions/workflows/build.yml) [![Chat on Matrix](https://matrix.to/img/matrix-badge.svg)](https://matrix.to/#/#rebirthteam:matrix.org)
 
 This is a decompilation of Pokémon Emerald, with many improvements and edits, similar to Rangi42's [polishedcrystal](https://github.com/Rangi42/polishedcrystal)
